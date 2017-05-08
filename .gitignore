@@ -1,5 +1,7 @@
+*~
+._*
+.DS_Store
+.idea
 shared/downloads
 tenderapi/*
 backend/stop-words
-.DS_Store
-.idea
