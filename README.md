@@ -19,14 +19,14 @@ Separated from the apps so apps can by started by a user with read-only access (
 used by backend app only
 
 ```
-├── cpvs.json // list of cpv codes, names and translations (TODO: URL of source)
-├── fingerprints.yaml // list of company idenifier and names (TODO: source to pudo)
+├── cpvs.json // list of cpv codes, names and translations (https://simap.ted.europa.eu/cpv)
+├── fingerprints.yaml // list of company idenifier and names (https://github.com/pudo/fingerprints)
 ├── publicbodies // scraped public body names and ids from FOI portals
 │   ├── at_publicbodies.json
 │   ├── cz_publicbodies.json
 │   ├── de_publicbodies.json
 │   …
-└── stopwords.txt // combined stopwords file for elastic search analyzer fields. Source: https://github.com/Alir3z4/stop-words
+└── stopwords.txt // combined stopwords file for elastic search analyzer fields (https://github.com/Alir3z4/stop-words)
 ```
 
 ## shared
