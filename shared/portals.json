@@ -1,0 +1,224 @@
+{
+  "active": [
+    {
+      "id": "eu",
+      "name": "Europe"
+    },
+    {
+      "id": "de",
+      "name": "Germany",
+      "foi": {
+        "name": "FragDenStaat.de",
+        "url": "https://fragdenstaat.de",
+        "request": "/anfrage-stellen/an/{body_url_name}/?ref=opentender-{tenderid}&subject={subject}&body={body}",
+        "body": "Ich habe da mal eine Frage zu:",
+        "subject": "Erbitte Auskunft",
+        "demo_body_url": "landesamt-fur-gesundheit-und-soziales-lageso-heimaufsicht",
+        "format": "froide"
+      }
+    },
+    {
+      "id": "at",
+      "name": "Austria",
+      "foi": {
+        "name": "FragDenStaat.at",
+        "url": "https://fragdenstaat.at",
+        "request": "/anfrage-stellen/an/{body_url_name}/?ref=opentender-{tenderid}&subject={subject}&body={body}",
+        "body": "Ich habe da mal eine Frage zu:",
+        "subject": "Erbitte Auskunft",
+        "demo_body_url": "bundesministerium-fur-inneres",
+        "format": "froide"
+      }
+    },
+    {
+      "id": "uk",
+      "name": "United Kingdom",
+      "foi": {
+        "name": "WhatDoTheyKnow",
+        "url": "https://www.whatdotheyknow.com",
+        "request": "/new/{body_url_name}?tags=opentender opentenderid:{tenderid}&title={subject}&default_letter={body}",
+        "body": "I have a question:",
+        "subject": "FOI-Request",
+        "demo_body_url": "dwp",
+        "format": "alaveteli"
+      }
+    },
+    {
+      "id": "hu",
+      "name": "Hungary",
+      "foi": {
+        "name": "Ki Mit Tud",
+        "url": "http://kimittud.atlatszo.hu",
+        "request": "/new/{body_url_name}?tags=opentender opentenderid:{tenderid}&title={subject}&default_letter={body}",
+        "body": "I have a question:",
+        "subject": "FOI-Request",
+        "format": "alaveteli"
+      }
+    },
+    {
+      "id": "cz",
+      "name": "Czech Republic",
+      "foi": {
+        "name": "Info Pro Všechny",
+        "url": "http://www.infoprovsechny.cz",
+        "request": "/new/{body_url_name}?tags=opentender opentenderid:{tenderid}&title={subject}&default_letter={body}",
+        "body": "I have a question:",
+        "subject": "FOI-Request",
+        "demo_body_url": "msto_ernovice",
+        "format": "alaveteli"
+      }
+    },
+    {
+      "id": "hr",
+      "name": "Croatia",
+      "foi": {
+        "name": "Imamo pravo znati",
+        "url": "http://imamopravoznati.org",
+        "request": "/new/{body_url_name}?tags=opentender opentenderid:{tenderid}&title={subject}&default_letter={body}",
+        "body": "I have a question:",
+        "subject": "FOI-Request",
+        "demo_body_url": "zagrebacka_zupanija",
+        "format": "alaveteli"
+      }
+    },
+    {
+      "id": "ro",
+      "name": "Romania",
+      "foi": {
+        "name": "Nu Vă Supărați",
+        "url": "http://nuvasuparati.info",
+        "request": "/new/{body_url_name}?tags=opentender opentenderid:{tenderid}&title={subject}&default_letter={body}",
+        "body": "I have a question:",
+        "subject": "FOI-Request",
+        "demo_body_url": "academia_romn",
+        "format": "alaveteli"
+      }
+    },
+    {
+      "id": "it",
+      "name": "Italy",
+      "foi": {
+        "name": "Chiedi",
+        "url": "http://chiedi.dirittodisapere.it",
+        "request": "/new/{body_url_name}?tags=opentender opentenderid:{tenderid}&title={subject}&default_letter={body}",
+        "body": "I have a question:",
+        "subject": "FOI-Request",
+        "demo_body_url": "ats_brianza_asl_monza_e_brianza",
+        "format": "alaveteli"
+      }
+    },
+    {
+      "id": "no",
+      "name": "Norway",
+      "foi": {
+        "name": "Mimes Brønn",
+        "url": "https://www.mimesbronn.no",
+        "request": "/new/{body_url_name}?tags=opentender opentenderid:{tenderid}&title={subject}&default_letter={body}",
+        "body": "I have a question:",
+        "subject": "FOI-Request",
+        "demo_body_url": "datatilsynet",
+        "format": "alaveteli"
+      }
+    },
+    {
+      "id": "pl",
+      "name": "Poland"
+    },
+    {
+      "id": "fr",
+      "name": "France"
+    },
+    {
+      "id": "es",
+      "name": "Spain"
+    },
+    {
+      "id": "nl",
+      "name": "Netherlands"
+    },
+    {
+      "id": "se",
+      "name": "Sweden"
+    },
+    {
+      "id": "dk",
+      "name": "Denmark"
+    },
+    {
+      "id": "cy",
+      "name": "Cyprus"
+    },
+    {
+      "id": "lv",
+      "name": "Latvia"
+    },
+    {
+      "id": "si",
+      "name": "Slovenia"
+    },
+    {
+      "id": "pt",
+      "name": "Portugal"
+    },
+    {
+      "id": "lt",
+      "name": "Lithuania"
+    },
+    {
+      "id": "gr",
+      "name": "Greece"
+    },
+    {
+      "id": "mt",
+      "name": "Malta"
+    },
+    {
+      "id": "bg",
+      "name": "Bulgaria"
+    },
+    {
+      "id": "be",
+      "name": "Belgium"
+    },
+    {
+      "id": "sk",
+      "name": "Slovakia"
+    },
+    {
+      "id": "ee",
+      "name": "Estonia"
+    },
+    {
+      "id": "lu",
+      "name": "Luxembourg"
+    },
+    {
+      "id": "fi",
+      "name": "Finland"
+    },
+    {
+      "id": "ch",
+      "name": "Switzerland"
+    },
+    {
+      "id": "ie",
+      "name": "Ireland"
+    },
+    {
+      "id": "is",
+      "name": "Iceland"
+    },
+    {
+      "id": "am",
+      "name": "Armenia"
+    },
+    {
+      "id": "ge",
+      "name": "Georgia"
+    },
+    {
+      "id": "rs",
+      "name": "Serbia"
+    }
+  ]
+}

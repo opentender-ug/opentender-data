@@ -1,0 +1,5 @@
+shared/downloads
+tenderapi/*
+backend/stop-words
+.DS_Store
+.idea
