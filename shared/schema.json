@@ -198,6 +198,11 @@
           "description": "ISO 4217 of used currency",
           "distinct": true
         },
+        "currencyNational": {
+          "type": "string",
+          "description": "ISO 4217 of used currency",
+          "distinct": true
+        },
         "vat": {
           "type": "number",
           "description": "VAT percentage (0 if no VAT is paid)"
@@ -205,6 +210,14 @@
         "netAmount": {
           "type": "number",
           "description": "Price without VAT"
+        },
+        "netAmountNational": {
+          "type": "number",
+          "description": "Price in national currency without VAT"
+        },
+        "netAmountEur": {
+          "type": "number",
+          "description": "Price in EUR without VAT"
         },
         "amountWithVat": {
           "type": "number",
@@ -794,7 +807,11 @@
           "type": "string",
           "description": "Type of indicator",
           "enum": [
-            "CORRUPTION_SINGLE_BID"
+            "CORRUPTION_SINGLE_BID",
+            "ADMINISTRATIVE_CENTRALIZED_PROCUREMENT",
+            "ADMINISTRATIVE_ELECTRONIC_AUCTION",
+            "ADMINISTRATIVE_COVERED_BY_GPA",
+            "ADMINISTRATIVE_FRAMEWORK_AGREEMENT"
           ]
         },
         "metaData": {
@@ -1031,7 +1048,7 @@
           "description": "Body from whom specifications and additional documents can be obtained"
         },
         "bidsRecipient": {
-          "$ref": "#/definitions/body",
+          "$ref": "#/definitions/buyer",
           "description": "Body to whom tenders/requests to participate must be sent"
         },
         "addressOfImplementation": {
