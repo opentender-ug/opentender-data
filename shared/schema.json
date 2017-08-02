@@ -707,6 +707,10 @@
           "type": "integer",
           "description": "Estimated tender duration in days"
         },
+        "estimatedDurationInYears": {
+          "type": "integer",
+          "description": "Estimated tender duration in years"
+        },
         "maxFrameworkAgreementParticipants": {
           "type": "integer",
           "description": "Envisaged maximum number of participatns to the framework agreement"
@@ -1016,17 +1020,21 @@
           "type": "integer",
           "description": "Estimated tender duration in days"
         },
+        "estimatedDurationInYears": {
+          "type": "integer",
+          "description": "Estimated tender duration in years"
+        },
         "awardDeadlineDuration": {
           "type": "integer",
           "description": "awardDeadlineDuration"
         },
         "maxFrameworkAgreementParticipants": {
           "type": "integer",
-          "description": "Envisaged maximum number of participatns to the framework agreement"
+          "description": "Envisaged maximum number of participants to the framework agreement"
         },
         "maxBidsCount": {
           "type": "integer",
-          "description": "Maximum number of bids, typically used in Restricted or Negotiated with publication procedure.."
+          "description": "Maximum number of bids, typically used in Restricted or Negotiated with publication procedure"
         },
         "documentsPrice": {
           "$ref": "#/definitions/price",
