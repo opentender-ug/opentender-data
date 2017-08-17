@@ -25,8 +25,8 @@ let buildGeoJson = (filename, resolution, level) => {
 };
 
 ['20', '60'].forEach((resolution) => {
-	[1, 2, 3].forEach((level) => {
-		buildGeoJson('./nuts_rg_' + resolution + 'M_2013_lvl_' + level + '.geo.json', resolution, level);
+	[0, 1, 2, 3].forEach((level) => {
+		buildGeoJson('./nuts_rg_' + resolution + 'M_2013_lvl_' + level + '.geojson', resolution, level);
 	});
 });
 
