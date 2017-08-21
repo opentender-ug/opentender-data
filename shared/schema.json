@@ -432,6 +432,62 @@
         }
       }
     },
+    "body-metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "title": "Meta Data",
+      "properties": {
+        "foundationDate": {
+          "type": "string",
+          "description": ""
+        }
+      }
+    },
+    "body": {
+      "type": "object",
+      "additionalProperties": false,
+      "title": "Body",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": ""
+        },
+        "groupId": {
+          "type": "string",
+          "description": "Organizational ID"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of body"
+        },
+        "contactName": {
+          "type": "string",
+          "description": "The name of the contact person"
+        },
+        "contactPoint": {
+          "type": "string",
+          "description": "Description of contact point - usually"
+        },
+        "phone": {
+          "type": "string",
+          "description": "The phone number of the contact"
+        },
+        "email": {
+          "type": "string"
+        },
+        "web": {
+          "type": "string"
+        },
+        "address": {
+          "$ref": "#/definitions/address",
+          "description": "Address of the body seat"
+        },
+        "metaData": {
+          "$ref": "#/definitions/body-metadata",
+          "description": ""
+        }
+      }
+    },
     "buyer": {
       "type": "object",
       "additionalProperties": false,
@@ -490,47 +546,10 @@
         "isLeader": {
           "type": "boolean",
           "description": "Identifies the leader of consortium (typically buyer or bidder)"
-        }
-      }
-    },
-    "body": {
-      "type": "object",
-      "additionalProperties": false,
-      "title": "Body",
-      "properties": {
-        "id": {
-          "type": "string",
+        },
+        "metaData": {
+          "$ref": "#/definitions/body-metadata",
           "description": ""
-        },
-        "groupId": {
-          "type": "string",
-          "description": "Organizational ID"
-        },
-        "name": {
-          "type": "string",
-          "description": "Name of body"
-        },
-        "contactName": {
-          "type": "string",
-          "description": "The name of the contact person"
-        },
-        "contactPoint": {
-          "type": "string",
-          "description": "Description of contact point - usually"
-        },
-        "phone": {
-          "type": "string",
-          "description": "The phone number of the contact"
-        },
-        "email": {
-          "type": "string"
-        },
-        "web": {
-          "type": "string"
-        },
-        "address": {
-          "$ref": "#/definitions/address",
-          "description": "Address of the body seat"
         }
       }
     },
@@ -592,6 +611,10 @@
             "description": "Buyer Activity Type - education, health, social security, ..."
           },
           "description": "Array of Buyer Activity Type"
+        },
+        "metaData": {
+          "$ref": "#/definitions/body-metadata",
+          "description": ""
         }
       }
     },
@@ -812,10 +835,17 @@
           "description": "Type of indicator",
           "enum": [
             "CORRUPTION_SINGLE_BID",
+            "CORRUPTION_PRIOR_INFORMATION_NOTICE",
+            "CORRUPTION_ADVERTISEMENT_PERIOD",
+            "CORRUPTION_PROCEDURE_TYPE",
+            "CORRUPTION_DECISION_PERIOD",
+            "CORRUPTION_TAX_HAVEN",
+            "CORRUPTION_NEW_COMPANY",
             "ADMINISTRATIVE_CENTRALIZED_PROCUREMENT",
             "ADMINISTRATIVE_ELECTRONIC_AUCTION",
             "ADMINISTRATIVE_COVERED_BY_GPA",
-            "ADMINISTRATIVE_FRAMEWORK_AGREEMENT"
+            "ADMINISTRATIVE_FRAMEWORK_AGREEMENT",
+            "ADMINISTRATIVE_ENGLISH_AS_FOREIGN_LANGUAGE"
           ]
         },
         "metaData": {
@@ -833,6 +863,36 @@
                 ],
                 "description": ""
               }
+            },
+            "bidderGroupIds": {
+              "type": "array",
+              "description": "Array of bidderGroupIds",
+              "items": {
+                "type": [
+                  "string"
+                ],
+                "description": ""
+              }
+            },
+            "advertisementPeriodLength": {
+              "type": "number",
+              "description": ""
+            },
+            "decisionPeriodLEngth": {
+              "type": "number",
+              "description": ""
+            },
+            "callForTenderDate": {
+              "$ref": "#/definitions/date",
+              "description": ""
+            },
+            "awardDecisionDate": {
+              "$ref": "#/definitions/date",
+              "description": ""
+            },
+            "bidDeadline": {
+              "$ref": "#/definitions/date-time",
+              "description": ""
             }
           }
         }
