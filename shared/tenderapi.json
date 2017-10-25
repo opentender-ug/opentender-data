@@ -1,5 +1,5 @@
 {
-  "id": "opentender",
+  "id": "tenderapi",
   "#schema": "http://json-schema.org/draft-04/schema#",
   "definitions": {
     "date": {
@@ -87,6 +87,34 @@
       "title": "Language",
       "description": "undocumented language enumeration",
       "distinct": true
+    },
+    "body-id": {
+      "type": "object",
+      "additionalProperties": false,
+      "title": "BodyId",
+      "description": "VAT ID or other unique country ID",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Subject identifier such as VAT ID"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "ORGANIZATION_ID",
+            "HEADER_ICO",
+            "ETALON_ID",
+            "TRADE_REGISTER",
+            "STATISTICAL",
+            "TAX_ID"
+          ],
+          "description": "type od identifier such as 'VAT', 'CZ Business registry'"
+        },
+        "scope": {
+          "type": "string",
+          "description": "scope under which the identifier is unique. typically country code ( ISO 3166-1 alpha-2 = two letter ), or EU for VAT ID, null for global identifiers such as opencorporates or Bureau Van Dijk identifiers."
+        }
+      }
     },
     "cpv": {
       "type": "object",
@@ -339,6 +367,10 @@
       "additionalProperties": false,
       "title": "Publication",
       "properties": {
+        "@class": {
+          "type": "string",
+          "description": "DB entry creator"
+        },
         "sourceId": {
           "type": "string",
           "description": "Identifier of publication on source"
@@ -424,6 +456,34 @@
           "type": "string",
           "description": ""
         },
+        "groupId": {
+          "type": "string",
+          "description": "Organizational ID"
+        },
+        "created": {
+          "type": "string",
+          "description": "DB entry create date-time with ms"
+        },
+        "modified": {
+          "type": "string",
+          "description": "DB entry modified date-time with ms"
+        },
+        "createdBy": {
+          "type": "string",
+          "description": "DB entry creator"
+        },
+        "modifiedBy": {
+          "type": "string",
+          "description": "DB entry modifier"
+        },
+        "createdByVersion": {
+          "type": "string",
+          "description": "DB entry creator version"
+        },
+        "modifiedByVersion": {
+          "type": "string",
+          "description": "DB entry modifier version"
+        },
         "name": {
           "type": "string",
           "description": "Name of body"
@@ -461,9 +521,41 @@
       "additionalProperties": false,
       "title": "Buyer",
       "properties": {
+        "_id": {
+          "type": "string",
+          "description": ""
+        },
         "id": {
           "type": "string",
           "description": ""
+        },
+        "groupId": {
+          "type": "string",
+          "description": "Organizational ID"
+        },
+        "created": {
+          "type": "string",
+          "description": "DB entry create date-time with ms"
+        },
+        "modified": {
+          "type": "string",
+          "description": "DB entry modified date-time with ms"
+        },
+        "createdBy": {
+          "type": "string",
+          "description": "DB entry creator"
+        },
+        "modifiedBy": {
+          "type": "string",
+          "description": "DB entry modifier"
+        },
+        "createdByVersion": {
+          "type": "string",
+          "description": "DB entry creator version"
+        },
+        "modifiedByVersion": {
+          "type": "string",
+          "description": "DB entry modifier version"
         },
         "isSme": {
           "type": "boolean",
@@ -503,6 +595,13 @@
           },
           "description": "Array of Buyer Activity Type"
         },
+        "bodyIds": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/body-id"
+          },
+          "description": "Array of bodyIds"
+        },
         "buyerType": {
           "$ref": "#/definitions/buyer-type",
           "description": "Central, utility, regional/local, supported body (SOE's which are not utilities, research institutions,health care insurance companies, hospitals) institution under public law (prispevkove organizace), other"
@@ -522,9 +621,48 @@
       "additionalProperties": false,
       "title": "Bidder",
       "properties": {
+        "_id": {
+          "type": "string",
+          "description": ""
+        },
         "id": {
           "type": "string",
           "description": ""
+        },
+        "groupId": {
+          "type": "string",
+          "description": "Organizational ID"
+        },
+        "created": {
+          "type": "string",
+          "description": "DB entry create date-time with ms"
+        },
+        "modified": {
+          "type": "string",
+          "description": "DB entry modified date-time with ms"
+        },
+        "createdBy": {
+          "type": "string",
+          "description": "DB entry creator"
+        },
+        "modifiedBy": {
+          "type": "string",
+          "description": "DB entry modifier"
+        },
+        "createdByVersion": {
+          "type": "string",
+          "description": "DB entry creator version"
+        },
+        "modifiedByVersion": {
+          "type": "string",
+          "description": "DB entry modifier version"
+        },
+        "bodyIds": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/body-id"
+          },
+          "description": "Array of bodyIds"
         },
         "name": {
           "type": "string",
@@ -578,6 +716,40 @@
         }
       }
     },
+    "source-bid-id": {
+      "type": "object",
+      "additionalProperties": false,
+      "title": "Source Bid ID",
+      "properties": {
+        "tenderId": {
+          "type": "string",
+          "description": ""
+        },
+        "lotId": {
+          "type": "string",
+          "description": ""
+        },
+        "bidId": {
+          "type": "string",
+          "description": ""
+        }
+      }
+    },
+    "source-lot-id": {
+      "type": "object",
+      "additionalProperties": false,
+      "title": "Source Lot ID",
+      "properties": {
+        "tenderId": {
+          "type": "string",
+          "description": ""
+        },
+        "lotId": {
+          "type": "string",
+          "description": ""
+        }
+      }
+    },
     "bid": {
       "type": "object",
       "additionalProperties": false,
@@ -612,6 +784,13 @@
             "$ref": "#/definitions/bidder"
           },
           "description": "Array of Bidders"
+        },
+        "sourceBidIds": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/source-bid-id"
+          },
+          "description": "Array of sourceBidIds"
         },
         "unitPrices": {
           "type": "array",
@@ -774,6 +953,13 @@
         "cancellationReason": {
           "type": "string",
           "description": "cancellationReason"
+        },
+        "sourceLotIds": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/source-lot-id"
+          },
+          "description": "Array of sourceLotIds"
         }
       }
     },
@@ -782,6 +968,42 @@
       "additionalProperties": false,
       "title": "Indicator",
       "properties": {
+        "_id": {
+          "type": "string",
+          "description": ""
+        },
+        "id": {
+          "type": "string",
+          "description": ""
+        },
+        "created": {
+          "type": "string",
+          "description": "DB entry create date-time with ms"
+        },
+        "modified": {
+          "type": "string",
+          "description": "DB entry modified date-time with ms"
+        },
+        "createdBy": {
+          "type": "string",
+          "description": "DB entry creator"
+        },
+        "modifiedBy": {
+          "type": "string",
+          "description": "DB entry modifier"
+        },
+        "createdByVersion": {
+          "type": "string",
+          "description": "DB entry creator version"
+        },
+        "modifiedByVersion": {
+          "type": "string",
+          "description": "DB entry modifier version"
+        },
+        "relatedEntityId": {
+          "type": "string",
+          "description": ""
+        },
         "type": {
           "type": "string",
           "description": "Type of indicator",
@@ -799,6 +1021,54 @@
             "ADMINISTRATIVE_FRAMEWORK_AGREEMENT",
             "ADMINISTRATIVE_ENGLISH_AS_FOREIGN_LANGUAGE"
           ]
+        },
+        "metaData": {
+          "type": "object",
+          "description": "",
+          "additionalProperties": false,
+          "properties": {
+            "lotTitles": {
+              "type": "array",
+              "description": "Array of lotTitles",
+              "items": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": ""
+              }
+            },
+            "bidderGroupIds": {
+              "type": "array",
+              "description": "Array of bidderGroupIds",
+              "items": {
+                "type": [
+                  "string"
+                ],
+                "description": ""
+              }
+            },
+            "advertisementPeriodLength": {
+              "type": "number",
+              "description": ""
+            },
+            "decisionPeriodLEngth": {
+              "type": "number",
+              "description": ""
+            },
+            "callForTenderDate": {
+              "$ref": "#/definitions/date",
+              "description": ""
+            },
+            "awardDecisionDate": {
+              "$ref": "#/definitions/date",
+              "description": ""
+            },
+            "bidDeadline": {
+              "$ref": "#/definitions/date-time",
+              "description": ""
+            }
+          }
         }
       }
     },
@@ -807,9 +1077,17 @@
       "additionalProperties": false,
       "title": "Tender",
       "properties": {
+        "_id": {
+          "type": "string",
+          "description": "Tender ID"
+        },
         "id": {
           "type": "string",
           "description": "Tender ID"
+        },
+        "groupId": {
+          "type": "string",
+          "description": "Organizational ID"
         },
         "country": {
           "type": "string",
@@ -822,6 +1100,22 @@
         "modified": {
           "type": "string",
           "description": "DB entry modified date-time with ms"
+        },
+        "createdBy": {
+          "type": "string",
+          "description": "DB entry creator"
+        },
+        "modifiedBy": {
+          "type": "string",
+          "description": "DB entry modifier"
+        },
+        "createdByVersion": {
+          "type": "string",
+          "description": "DB entry creator version"
+        },
+        "modifiedByVersion": {
+          "type": "string",
+          "description": "DB entry modifier version"
         },
         "nationalProcedureType": {
           "type": "string",

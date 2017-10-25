@@ -35,7 +35,8 @@ used by backend and frontend app
 
 ```
 ├── portals.json // list of all active & inactive portals and their meta data, e.g. country specific FOI portal informations 
-│── schema.json // TenderApi/Opentender Data Format Definition
+│── schema.json // Opentender Data Format Definition
+│── tenderapi.json // TenderApi Data Format Definition
 └── downloads // place where generated country specific user downloads are stored (empty in repository)
     ├── data-am.ndjson.gz
     ├── data-at.ndjson.gz
