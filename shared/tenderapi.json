@@ -1004,12 +1004,17 @@
           "type": "string",
           "description": ""
         },
+        "value": {
+          "type": "number",
+          "description": "Score of indicator"
+        },
         "type": {
           "type": "string",
           "description": "Type of indicator",
           "enum": [
             "CORRUPTION_SINGLE_BID",
             "CORRUPTION_PRIOR_INFORMATION_NOTICE",
+            "CORRUPTION_CALL_FOR_TENDER_PUBLICATION",
             "CORRUPTION_ADVERTISEMENT_PERIOD",
             "CORRUPTION_PROCEDURE_TYPE",
             "CORRUPTION_DECISION_PERIOD",

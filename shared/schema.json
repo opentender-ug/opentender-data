@@ -782,12 +782,17 @@
       "additionalProperties": false,
       "title": "Indicator",
       "properties": {
+        "value": {
+          "type": "number",
+          "description": "Score of indicator"
+        },
         "type": {
           "type": "string",
           "description": "Type of indicator",
           "enum": [
             "CORRUPTION_SINGLE_BID",
             "CORRUPTION_PRIOR_INFORMATION_NOTICE",
+            "CORRUPTION_CALL_FOR_TENDER_PUBLICATION",
             "CORRUPTION_ADVERTISEMENT_PERIOD",
             "CORRUPTION_PROCEDURE_TYPE",
             "CORRUPTION_DECISION_PERIOD",
@@ -799,6 +804,36 @@
             "ADMINISTRATIVE_FRAMEWORK_AGREEMENT",
             "ADMINISTRATIVE_ENGLISH_AS_FOREIGN_LANGUAGE"
           ]
+        }
+      }
+    },
+    "score": {
+      "type": "object",
+      "additionalProperties": false,
+      "title": "Indicator Scores",
+      "properties": {
+        "type": {
+          "type": "string",
+          "description": "Type of indicator score",
+          "enum": [
+            "CORRUPTION",
+            "ADMINISTRATIVE",
+            "TRANSPARENCY",
+            "TENDER"
+          ]
+        },
+        "status": {
+          "type": "string",
+          "description": "Status of indicator score",
+          "enum": [
+            "CALCULATED",
+            "INSUFFICIENT_DATA",
+            "UNDEFINED"
+          ]
+        },
+        "value": {
+          "type": "number",
+          "description": "Calculated indicator Score"
         }
       }
     },
@@ -1041,6 +1076,13 @@
             "$ref": "#/definitions/indicator"
           },
           "description": "Array of Indicators"
+        },
+        "scores": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/score"
+          },
+          "description": "Array of indicator scores"
         },
         "onBehalfOf": {
           "type": "array",
