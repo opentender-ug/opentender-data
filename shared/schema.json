@@ -833,7 +833,7 @@
         },
         "value": {
           "type": "number",
-          "description": "Calculated indicator Score"
+          "description": "Calculated indicator score"
         }
       }
     },
