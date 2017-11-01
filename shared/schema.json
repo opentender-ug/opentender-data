@@ -62,6 +62,7 @@
         "REGIONAL_AGENCY",
         "PUBLIC_BODY",
         "EUROPEAN_AGENCY",
+        "UTILITIES",
         "OTHER"
       ]
     },
@@ -774,6 +775,14 @@
         "cancellationReason": {
           "type": "string",
           "description": "cancellationReason"
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "ANNOUNCED",
+            "AWARDED"
+          ],
+          "description": ""
         }
       }
     },
@@ -791,7 +800,6 @@
           "description": "Type of indicator",
           "enum": [
             "CORRUPTION_SINGLE_BID",
-            "CORRUPTION_PRIOR_INFORMATION_NOTICE",
             "CORRUPTION_CALL_FOR_TENDER_PUBLICATION",
             "CORRUPTION_ADVERTISEMENT_PERIOD",
             "CORRUPTION_PROCEDURE_TYPE",
@@ -802,8 +810,18 @@
             "ADMINISTRATIVE_ELECTRONIC_AUCTION",
             "ADMINISTRATIVE_COVERED_BY_GPA",
             "ADMINISTRATIVE_FRAMEWORK_AGREEMENT",
-            "ADMINISTRATIVE_ENGLISH_AS_FOREIGN_LANGUAGE"
+            "ADMINISTRATIVE_ENGLISH_AS_FOREIGN_LANGUAGE",
+            "TRANSPARENCY_NUMBER_OF_KEY_MISSING_FIELDS"
           ]
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "CALCULATED",
+            "INSUFFICIENT_DATA",
+            "UNDEFINED"
+          ],
+          "description": ""
         }
       }
     },

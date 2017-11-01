@@ -62,6 +62,7 @@
         "REGIONAL_AGENCY",
         "PUBLIC_BODY",
         "EUROPEAN_AGENCY",
+        "UTILITIES",
         "OTHER"
       ]
     },
@@ -106,7 +107,8 @@
             "ETALON_ID",
             "TRADE_REGISTER",
             "STATISTICAL",
-            "TAX_ID"
+            "TAX_ID",
+            "BVD_ID"
           ],
           "description": "type od identifier such as 'VAT', 'CZ Business registry'"
         },
@@ -202,6 +204,10 @@
           "type": "string",
           "description": "ISO 4217 of used currency",
           "distinct": true
+        },
+        "publicationDate": {
+          "$ref": "#/definitions/date",
+          "description": ""
         },
         "vat": {
           "type": "number",
@@ -826,6 +832,14 @@
           "type": "string",
           "description": "Tender lot description"
         },
+        "status": {
+          "type": "string",
+          "enum": [
+            "ANNOUNCED",
+            "AWARDED"
+          ],
+          "description": ""
+        },
         "lotNumber": {
           "type": "integer",
           "description": "Lot number"
@@ -968,40 +982,17 @@
       "additionalProperties": false,
       "title": "Indicator",
       "properties": {
-        "_id": {
+        "@class": {
           "type": "string",
           "description": ""
         },
-        "id": {
+        "status": {
           "type": "string",
-          "description": ""
-        },
-        "created": {
-          "type": "string",
-          "description": "DB entry create date-time with ms"
-        },
-        "modified": {
-          "type": "string",
-          "description": "DB entry modified date-time with ms"
-        },
-        "createdBy": {
-          "type": "string",
-          "description": "DB entry creator"
-        },
-        "modifiedBy": {
-          "type": "string",
-          "description": "DB entry modifier"
-        },
-        "createdByVersion": {
-          "type": "string",
-          "description": "DB entry creator version"
-        },
-        "modifiedByVersion": {
-          "type": "string",
-          "description": "DB entry modifier version"
-        },
-        "relatedEntityId": {
-          "type": "string",
+          "enum": [
+            "CALCULATED",
+            "INSUFFICIENT_DATA",
+            "UNDEFINED"
+          ],
           "description": ""
         },
         "value": {
@@ -1013,7 +1004,6 @@
           "description": "Type of indicator",
           "enum": [
             "CORRUPTION_SINGLE_BID",
-            "CORRUPTION_PRIOR_INFORMATION_NOTICE",
             "CORRUPTION_CALL_FOR_TENDER_PUBLICATION",
             "CORRUPTION_ADVERTISEMENT_PERIOD",
             "CORRUPTION_PROCEDURE_TYPE",
@@ -1024,7 +1014,8 @@
             "ADMINISTRATIVE_ELECTRONIC_AUCTION",
             "ADMINISTRATIVE_COVERED_BY_GPA",
             "ADMINISTRATIVE_FRAMEWORK_AGREEMENT",
-            "ADMINISTRATIVE_ENGLISH_AS_FOREIGN_LANGUAGE"
+            "ADMINISTRATIVE_ENGLISH_AS_FOREIGN_LANGUAGE",
+            "TRANSPARENCY_NUMBER_OF_KEY_MISSING_FIELDS"
           ]
         },
         "metaData": {
@@ -1082,17 +1073,9 @@
       "additionalProperties": false,
       "title": "Tender",
       "properties": {
-        "_id": {
-          "type": "string",
-          "description": "Tender ID"
-        },
         "id": {
           "type": "string",
           "description": "Tender ID"
-        },
-        "groupId": {
-          "type": "string",
-          "description": "Organizational ID"
         },
         "country": {
           "type": "string",
