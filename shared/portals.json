@@ -1,7 +1,11 @@
 [
   {
+    "id": "all",
+    "name": "All Data"
+  },
+  {
     "id": "eu",
-    "name": "Europe"
+    "name": "European Community"
   },
   {
     "id": "de",
