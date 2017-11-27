@@ -1,0 +1,16 @@
+{
+  "sources": [
+    "https://fr.wikipedia.org/wiki/Liste_des_r%C3%A9gions_de_l%27Union_europ%C3%A9enne,_de_l%27Association_europ%C3%A9enne_de_libre-%C3%A9change_et_des_pays_candidats_%C3%A0_l%27adh%C3%A9sion_%C3%A0_l%27Union_europ%C3%A9enne"
+  ],
+  "mapping": [
+    {"src": "FR9", "dest": "FRA", "name": "Départements d'Outre Mer"},
+    {"src": "FR91", "dest": "FRA1", "name": "Guadeloupe"},
+    {"src": "FR910", "dest": "FRA10", "name": "Guadeloupe"},
+    {"src": "FR92", "dest": "FRA2", "name": "Martinique"},
+    {"src": "FR920", "dest": "FRA20", "name": "Martinique"},
+    {"src": "FR93", "dest": "FRA3", "name": "Guyane"},
+    {"src": "FR930", "dest": "FRA30", "name": "Guyane"},
+    {"src": "FR94", "dest": "FRA4", "name": "La Réunion"},
+    {"src": "FR940", "dest": "FRA40", "name": "La Réunion"}
+  ]
+}

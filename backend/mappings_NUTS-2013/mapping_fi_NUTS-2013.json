@@ -1,0 +1,24 @@
+{
+  "sources": [
+    "http://www.eurotender.de/php/nutcodes-dephp/nutscodedeFI.php"
+  ],
+  "mapping": [
+    {"src": "FI131", "dest": "FI1D1", "name": "Etelä-Savo"},
+    {"src": "FI132", "dest": "FI1D2", "name": "Pohjois-Savo"},
+    {"src": "FI133", "dest": "FI1D3", "name": "Pohjois-Karjala"},
+    {"src": "FI134", "dest": "FI1D4", "name": "Kainuu"},
+    {"src": "FI181", "dest": "FI1B", "name": "Uusimaa"},
+    {"src": "FI182", "dest": "FI1B", "name": "Itä-Uusimaa"},
+    {"src": "FI183", "dest": "FI1C1", "name": "Varsinais-Suomi"},
+    {"src": "FI184", "dest": "FI1C2", "name": "Kanta-Häme"},
+    {"src": "FI185", "dest": "FI1C3", "name": "Päijät-Häme"},
+    {"src": "FI186", "dest": "FI1C4", "name": "Kymenlaakso"},
+    {"src": "FI187", "dest": "FI1C5", "name": "Etelä-Karjala"},
+    {"src": "FI1A1", "dest": "FI1D5", "name": "Keski-Pohjanmaa"},
+    {"src": "FI1A2", "dest": "FI1D6", "name": "Pohjois-Pohjanmaa"},
+    {"src": "FI1A3", "dest": "FI1D7", "name": "Lappi"},
+    {"src": "FI18", "dest": "FI1C", "name": "Etelä-Suomi"},
+    {"src": "FI1A", "dest": "FI1D", "name": "Pohjois-Suomi"},
+    {"src": "FI13", "dest": "FI1D", "name": "Itä-Suomi"}
+  ]
+}

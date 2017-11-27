@@ -1,0 +1,36 @@
+{
+  "sources": [
+    "https://www.wti-frankfurt.de/images/downloads/rechercheunterstuetzung/TED-Nuts-Codes.pdf",
+    "https://en.wikipedia.org/wiki/NUTS_statistical_regions_of_Slovenia"
+  ],
+  "mapping": [
+    {"src": "SI010", "dest": "SI03", "name": "Vzhodna Slovenija"},
+    {"src": "SI011", "dest": "SI031", "name": "Pomurska"},
+    {"src": "SI012", "dest": "SI032", "name": "Podravska"},
+    {"src": "SI013", "dest": "SI033", "name": "Koroska"},
+    {"src": "SI014", "dest": "SI034", "name": "Savinjska"},
+    {"src": "SI015", "dest": "SI035", "name": "Zasavska"},
+    {"src": "SI016", "dest": "SI036", "name": "Spodnjeposavska"},
+    {"src": "SI017", "dest": "SI037", "name": "Jugovzhodna Slovenija"},
+    {"src": "SI018", "dest": "SI038", "name": "Notranjsko - kraska"},
+    {"src": "SI020", "dest": "SI04", "name": "Zahodna Slovenija"},
+    {"src": "SI021", "dest": "SI041", "name": "Osrednjeslovenska"},
+    {"src": "SI022", "dest": "SI042", "name": "Gorenjska"},
+    {"src": "SI023", "dest": "SI043", "name": "Goriska"},
+    {"src": "SI024", "dest": "SI044", "name": "Obalno - kraska"},
+    {"src": "SI01", "dest": "SI03", "name": "Vzhodna Slovenija"},
+    {"src": "SI02", "dest": "SI04", "name": "Zahodna Slovenija"},
+    {"src": "SI001", "dest": "SI031", "name": "Pomurska"},
+    {"src": "SI002", "dest": "SI032", "name": "Podravska"},
+    {"src": "SI003", "dest": "SI033", "name": "Koroska"},
+    {"src": "SI004", "dest": "SI034", "name": "Savinjska"},
+    {"src": "SI005", "dest": "SI035", "name": "Zasavska"},
+    {"src": "SI006", "dest": "SI036", "name": "Spodnjeposavska"},
+    {"src": "SI009", "dest": "SI042", "name": "Gorenjska"},
+    {"src": "SI00A", "dest": "SI044", "name": "Obalno - kraska"},
+    {"src": "SI00B", "dest": "SI043", "name": "Goriska"},
+    {"src": "SI00C", "dest": "SI048", "name": "Notranjsko - kraska"},
+    {"src": "SI00D", "dest": "SI047", "name": "Jugovzhodna Slovenija"},
+    {"src": "SI00E", "dest": "SI041", "name": "Osrednjeslovenska"}
+  ]
+}
