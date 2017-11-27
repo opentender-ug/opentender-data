@@ -314,6 +314,10 @@
         "postcode": {
           "type": "string"
         },
+        "nutscode": {
+          "type": "string",
+          "description": "Cleaned Nuts code"
+        },
         "country": {
           "type": "string",
           "description": "Country Code: ISO 3166-1 alpha-2 = two letter"
@@ -330,7 +334,7 @@
               "string",
               "null"
             ],
-            "description": "Nuts code of region"
+            "description": "Orginal Nuts code of region"
           }
         }
       }
