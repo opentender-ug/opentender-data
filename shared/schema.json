@@ -1099,13 +1099,6 @@
           },
           "description": "Array of Indicators"
         },
-        "scores": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/score"
-          },
-          "description": "Array of indicator scores"
-        },
         "onBehalfOf": {
           "type": "array",
           "items": {
@@ -1187,6 +1180,17 @@
             "description": "correction"
           },
           "description": "corrections"
+        },
+        "scores": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/score"
+          },
+          "description": "Array of indicator scores"
+        },
+        "date":  {
+          "$ref": "#/definitions/date",
+          "description": "Unified 'Tender' Date based on tender.awardDeadline && tender.lots.awardDecisionDate for Tender Date filtering"
         }
       },
       "required": [
@@ -1195,7 +1199,7 @@
     }
   },
   "title": "Tender Set",
-  "description": "Array of Tender",
+  "description": "Array of Tenders",
   "type": "array",
   "items": {
     "$ref": "#/definitions/tender"

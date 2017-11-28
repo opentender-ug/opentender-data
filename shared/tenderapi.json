@@ -1413,7 +1413,7 @@
     }
   },
   "title": "Tender Set",
-  "description": "Array of Tender",
+  "description": "Array of Tenders",
   "type": "array",
   "items": {
     "$ref": "#/definitions/tender"
