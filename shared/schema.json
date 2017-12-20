@@ -1099,6 +1099,26 @@
           },
           "description": "Array of Indicators"
         },
+        "_indicators": {
+          "type": "object",
+          "additionalProperties": false,
+          "title": "Indicators as Fields",
+          "properties": {
+            "CORRUPTION_SINGLE_BID": {"type": "number"},
+            "CORRUPTION_CALL_FOR_TENDER_PUBLICATION": {"type": "number"},
+            "CORRUPTION_ADVERTISEMENT_PERIOD": {"type": "number"},
+            "CORRUPTION_PROCEDURE_TYPE": {"type": "number"},
+            "CORRUPTION_DECISION_PERIOD": {"type": "number"},
+            "CORRUPTION_TAX_HAVEN": {"type": "number"},
+            "CORRUPTION_NEW_COMPANY": {"type": "number"},
+            "ADMINISTRATIVE_CENTRALIZED_PROCUREMENT": {"type": "number"},
+            "ADMINISTRATIVE_ELECTRONIC_AUCTION": {"type": "number"},
+            "ADMINISTRATIVE_COVERED_BY_GPA": {"type": "number"},
+            "ADMINISTRATIVE_FRAMEWORK_AGREEMENT": {"type": "number"},
+            "ADMINISTRATIVE_ENGLISH_AS_FOREIGN_LANGUAGE": {"type": "number"},
+            "TRANSPARENCY_NUMBER_OF_KEY_MISSING_FIELDS": {"type": "number"}
+          }
+        },
         "onBehalfOf": {
           "type": "array",
           "items": {
