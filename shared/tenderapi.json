@@ -20,7 +20,8 @@
       "enum": [
         "SUPPLIES",
         "WORKS",
-        "SERVICES"
+        "SERVICES",
+        "OTHER"
       ]
     },
     "procedure-type": {
@@ -40,7 +41,17 @@
         "APPROACHING_BIDDERS",
         "PUBLIC_CONTEST",
         "SIMPLIFIED_BELOW_THE_THRESHOLD",
-        "INOVATION_PARTNERSHIP"
+        "INOVATION_PARTNERSHIP",
+        "CONCESSION",
+        "OTHER"
+      ]
+    },
+    "size-type": {
+      "type": "string",
+      "title": "Size Type",
+      "enum": [
+        "BELOW_THE_THRESHOLD",
+        "ABOVE_THE_THRESHOLD"
       ]
     },
     "selection-method": {
@@ -83,6 +94,41 @@
       "distinct": true,
       "description": "undocumented form-type enumeration"
     },
+    "indicator-type": {
+      "type": "string",
+      "title": "Indicator Type",
+      "enum": [
+        "INTEGRITY_SINGLE_BID",
+        "INTEGRITY_CALL_FOR_TENDER_PUBLICATION",
+        "INTEGRITY_ADVERTISEMENT_PERIOD",
+        "INTEGRITY_PROCEDURE_TYPE",
+        "INTEGRITY_DECISION_PERIOD",
+        "INTEGRITY_TAX_HAVEN",
+        "INTEGRITY_NEW_COMPANY",
+        "ADMINISTRATIVE_CENTRALIZED_PROCUREMENT",
+        "ADMINISTRATIVE_ELECTRONIC_AUCTION",
+        "ADMINISTRATIVE_COVERED_BY_GPA",
+        "ADMINISTRATIVE_FRAMEWORK_AGREEMENT",
+        "ADMINISTRATIVE_ENGLISH_AS_FOREIGN_LANGUAGE",
+        "TRANSPARENCY_NUMBER_OF_KEY_MISSING_FIELDS",
+        "TRANSPARENCY_NOTICE_AND_AWARD_DISCREPANCIES"
+      ]
+    },
+    "indicator-status-type": {
+      "type": "string",
+      "title": "Indicator Status Type",
+      "enum": [
+        "CALCULATED",
+        "INSUFFICIENT_DATA",
+        "UNDEFINED"
+      ]
+    },
+    "indicator-value": {
+      "type": "number",
+      "title": "Indicator Score",
+      "min": 0,
+      "max": 100
+    },
     "language": {
       "type": "string",
       "title": "Language",
@@ -108,7 +154,8 @@
             "TRADE_REGISTER",
             "STATISTICAL",
             "TAX_ID",
-            "BVD_ID"
+            "BVD_ID",
+            "SOURCE_ID"
           ],
           "description": "type od identifier such as 'VAT', 'CZ Business registry'"
         },
@@ -347,6 +394,9 @@
         "postcode": {
           "type": "string"
         },
+        "state": {
+          "type": "string"
+        },
         "country": {
           "type": "string",
           "description": "Country Code: ISO 3166-1 alpha-2 = two letter"
@@ -389,6 +439,10 @@
           "type": "string",
           "description": "Url of tender on source, where human readable data are present, null if not available"
         },
+        "machineReadableUrl": {
+          "type": "string",
+          "description": "Url of tender on source, where machine readable data are present, null if not available"
+        },
         "buyerAssignedId": {
           "type": "string",
           "description": "Buyers custom identifier of publication"
@@ -404,6 +458,9 @@
         "dispatchDate": {
           "$ref": "#/definitions/date",
           "description": "Date of dispatch (different from publication date)"
+        },
+        "lastUpdate": {
+          "$ref": "#/definitions/date"
         },
         "language": {
           "$ref": "#/definitions/language",
@@ -428,6 +485,9 @@
         "isParentTender": {
           "type": "boolean",
           "description": "isParentTender"
+        },
+        "version": {
+          "type": "number"
         }
       }
     },
@@ -436,9 +496,24 @@
       "additionalProperties": false,
       "title": "TenderDocument",
       "properties": {
+        "title": {
+          "type": "string"
+        },
+        "language": {
+          "type": "string"
+        },
         "url": {
           "type": "string",
           "description": "Document url"
+        },
+        "publicationDateTime": {
+          "$ref": "#/definitions/date-time"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "CONTRACTOR_AGREEMENT"
+          ]
         }
       }
     },
@@ -619,6 +694,13 @@
         "metaData": {
           "$ref": "#/definitions/body-metadata",
           "description": ""
+        },
+        "indicators": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/indicator"
+          },
+          "description": "Array of Indicators"
         }
       }
     },
@@ -719,6 +801,13 @@
         "metaData": {
           "$ref": "#/definitions/body-metadata",
           "description": ""
+        },
+        "indicators": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/indicator"
+          },
+          "description": "Array of Indicators"
         }
       }
     },
@@ -756,6 +845,19 @@
         }
       }
     },
+    "payment": {
+      "type": "object",
+      "additionalProperties": false,
+      "title": "Payment",
+      "properties": {
+        "paymentDate": {
+          "$ref": "#/definitions/date"
+        },
+        "price": {
+          "$ref": "#/definitions/price"
+        }
+      }
+    },
     "bid": {
       "type": "object",
       "additionalProperties": false,
@@ -772,9 +874,11 @@
           "type": "boolean",
           "description": "Is there a subcontractor?"
         },
+        "isConsortium": {
+          "type": "boolean"
+        },
         "subcontractedProportion": {
-          "type": "integer",
-          "description": "subcontractedProportion"
+          "type": "integer"
         },
         "monthlyPriceMonthsCount": {
           "type": "integer",
@@ -804,6 +908,18 @@
             "$ref": "#/definitions/unit-price"
           },
           "description": "Array of Unit Price"
+        },
+        "payments": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/payment"
+          }
+        },
+        "subcontractors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/bidder"
+          }
         },
         "subcontractedValue": {
           "$ref": "#/definitions/price",
@@ -836,13 +952,18 @@
           "type": "string",
           "enum": [
             "ANNOUNCED",
-            "AWARDED"
+            "AWARDED",
+            "CANCELLED",
+            "PREPARED"
           ],
           "description": ""
         },
         "lotNumber": {
           "type": "integer",
           "description": "Lot number"
+        },
+        "validBidsCount": {
+          "type": "integer"
         },
         "awardDecisionDate": {
           "$ref": "#/definitions/date",
@@ -863,6 +984,9 @@
         "cancellationDate": {
           "$ref": "#/definitions/date",
           "description": "cancellationDate"
+        },
+        "completionDate": {
+          "$ref": "#/definitions/date"
         },
         "selectionMethod": {
           "$ref": "#/definitions/selection-method"
@@ -952,6 +1076,9 @@
           },
           "description": "MEAT criteria"
         },
+        "eligibilityCriteria": {
+          "type": "string"
+        },
         "electronicBidsCount": {
           "type": "integer",
           "description": "Number of bids received via electronic means"
@@ -987,36 +1114,15 @@
           "description": ""
         },
         "status": {
-          "type": "string",
-          "enum": [
-            "CALCULATED",
-            "INSUFFICIENT_DATA",
-            "UNDEFINED"
-          ],
-          "description": ""
+          "$ref": "#/definitions/indicator-status-type"
         },
         "value": {
-          "type": "number",
+          "$ref": "#/definitions/indicator-value",
           "description": "Score of indicator"
         },
         "type": {
-          "type": "string",
           "description": "Type of indicator",
-          "enum": [
-            "CORRUPTION_SINGLE_BID",
-            "CORRUPTION_CALL_FOR_TENDER_PUBLICATION",
-            "CORRUPTION_ADVERTISEMENT_PERIOD",
-            "CORRUPTION_PROCEDURE_TYPE",
-            "CORRUPTION_DECISION_PERIOD",
-            "CORRUPTION_TAX_HAVEN",
-            "CORRUPTION_NEW_COMPANY",
-            "ADMINISTRATIVE_CENTRALIZED_PROCUREMENT",
-            "ADMINISTRATIVE_ELECTRONIC_AUCTION",
-            "ADMINISTRATIVE_COVERED_BY_GPA",
-            "ADMINISTRATIVE_FRAMEWORK_AGREEMENT",
-            "ADMINISTRATIVE_ENGLISH_AS_FOREIGN_LANGUAGE",
-            "TRANSPARENCY_NUMBER_OF_KEY_MISSING_FIELDS"
-          ]
+          "$ref": "#/definitions/indicator-type"
         },
         "metaData": {
           "type": "object",
@@ -1169,8 +1275,14 @@
           "type": "string",
           "description": "modificationReasonDescription"
         },
+        "eligibilityCriteria": {
+          "type": "string"
+        },
         "procedureType": {
           "$ref": "#/definitions/procedure-type"
+        },
+        "size": {
+          "$ref": "#/definitions/size-type"
         },
         "supplyType": {
           "$ref": "#/definitions/supply-type"
@@ -1226,6 +1338,9 @@
           "type": "boolean",
           "description": "Are variant offers accepted?"
         },
+        "isDocumentsAccessRestricted": {
+          "type": "boolean"
+        },
         "hasOptions": {
           "type": "boolean",
           "description": "Tender has options?"
@@ -1258,6 +1373,16 @@
           "$ref": "#/definitions/date-time",
           "description": "Date until tender documents or additional information are provided"
         },
+        "awardDecisionDate": {
+          "$ref": "#/definitions/date",
+          "description": "Date of decision on tender award"
+        },
+        "contractSignatureDate": {
+          "$ref": "#/definitions/date"
+        },
+        "completionDate": {
+          "$ref": "#/definitions/date"
+        },
         "estimatedDurationInMonths": {
           "type": "integer",
           "description": "Estimated tender duration in months"
@@ -1281,6 +1406,15 @@
         "maxBidsCount": {
           "type": "integer",
           "description": "Maximum number of bids, typically used in Restricted or Negotiated with publication procedure"
+        },
+        "envisagedMinCandidatesCount": {
+          "type": "integer"
+        },
+        "envisagedMaxCandidatesCount": {
+          "type": "integer"
+        },
+        "envisagedCandidatesCount": {
+          "type": "integer"
         },
         "documentsPrice": {
           "$ref": "#/definitions/price",
@@ -1405,6 +1539,9 @@
             "description": "correction"
           },
           "description": "corrections"
+        },
+        "documentsLocation": {
+          "$ref": "#/definitions/address"
         }
       },
       "required": [

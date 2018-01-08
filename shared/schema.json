@@ -20,7 +20,8 @@
       "enum": [
         "SUPPLIES",
         "WORKS",
-        "SERVICES"
+        "SERVICES",
+        "OTHER"
       ]
     },
     "procedure-type": {
@@ -40,7 +41,17 @@
         "APPROACHING_BIDDERS",
         "PUBLIC_CONTEST",
         "SIMPLIFIED_BELOW_THE_THRESHOLD",
-        "INOVATION_PARTNERSHIP"
+        "INOVATION_PARTNERSHIP",
+        "CONCESSION",
+        "OTHER"
+      ]
+    },
+    "size-type": {
+      "type": "string",
+      "title": "Size Type",
+      "enum": [
+        "BELOW_THE_THRESHOLD",
+        "ABOVE_THE_THRESHOLD"
       ]
     },
     "selection-method": {
@@ -82,6 +93,52 @@
       ],
       "distinct": true,
       "description": "undocumented form-type enumeration"
+    },
+    "indicator-type": {
+      "type": "string",
+      "title": "Indicator Type",
+      "enum": [
+        "INTEGRITY_SINGLE_BID",
+        "INTEGRITY_CALL_FOR_TENDER_PUBLICATION",
+        "INTEGRITY_ADVERTISEMENT_PERIOD",
+        "INTEGRITY_PROCEDURE_TYPE",
+        "INTEGRITY_DECISION_PERIOD",
+        "INTEGRITY_TAX_HAVEN",
+        "INTEGRITY_NEW_COMPANY",
+        "ADMINISTRATIVE_CENTRALIZED_PROCUREMENT",
+        "ADMINISTRATIVE_ELECTRONIC_AUCTION",
+        "ADMINISTRATIVE_COVERED_BY_GPA",
+        "ADMINISTRATIVE_FRAMEWORK_AGREEMENT",
+        "ADMINISTRATIVE_ENGLISH_AS_FOREIGN_LANGUAGE",
+        "TRANSPARENCY_NUMBER_OF_KEY_MISSING_FIELDS",
+        "TRANSPARENCY_NOTICE_AND_AWARD_DISCREPANCIES"
+      ]
+    },
+    "score-type": {
+      "type": "string",
+      "title": "Score Type",
+      "description": "Type of indicator score",
+      "enum": [
+        "INTEGRITY",
+        "ADMINISTRATIVE",
+        "TRANSPARENCY",
+        "TENDER"
+      ]
+    },
+    "indicator-value": {
+      "type": "number",
+      "title": "Indicator Score",
+      "min": 0,
+      "max": 100
+    },
+    "indicator-status-type": {
+      "type": "string",
+      "title": "Indicator Status Type",
+      "enum": [
+        "CALCULATED",
+        "INSUFFICIENT_DATA",
+        "UNDEFINED"
+      ]
     },
     "language": {
       "type": "string",
@@ -311,6 +368,9 @@
         "city": {
           "type": "string"
         },
+        "state": {
+          "type": "string"
+        },
         "postcode": {
           "type": "string"
         },
@@ -356,6 +416,10 @@
           "type": "string",
           "description": "Url of tender on source, where human readable data are present, null if not available"
         },
+        "machineReadableUrl": {
+          "type": "string",
+          "description": "Url of tender on source, where machine readable data are present, null if not available"
+        },
         "buyerAssignedId": {
           "type": "string",
           "description": "Buyers custom identifier of publication"
@@ -371,6 +435,9 @@
         "dispatchDate": {
           "$ref": "#/definitions/date",
           "description": "Date of dispatch (different from publication date)"
+        },
+        "lastUpdate": {
+          "$ref": "#/definitions/date"
         },
         "language": {
           "$ref": "#/definitions/language",
@@ -395,6 +462,9 @@
         "isParentTender": {
           "type": "boolean",
           "description": "isParentTender"
+        },
+        "version": {
+          "type": "number"
         }
       }
     },
@@ -403,9 +473,27 @@
       "additionalProperties": false,
       "title": "TenderDocument",
       "properties": {
+        "title": {
+          "type": "string"
+        },
+        "language": {
+          "type": "string"
+        },
         "url": {
           "type": "string",
           "description": "Document url"
+        },
+        "publicationDateTime": {
+          "$ref": "#/definitions/date-time"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "CONTRACTOR_AGREEMENT"
+          ]
+        },
+        "version": {
+          "type": "number"
         }
       }
     },
@@ -519,6 +607,13 @@
         "metaData": {
           "$ref": "#/definitions/body-metadata",
           "description": ""
+        },
+        "indicators": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/indicator"
+          },
+          "description": "Array of Indicators"
         }
       }
     },
@@ -580,6 +675,26 @@
         "metaData": {
           "$ref": "#/definitions/body-metadata",
           "description": ""
+        },
+        "indicators": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/indicator"
+          },
+          "description": "Array of Indicators"
+        }
+      }
+    },
+    "payment": {
+      "type": "object",
+      "additionalProperties": false,
+      "title": "Payment",
+      "properties": {
+        "paymentDate": {
+          "$ref": "#/definitions/date"
+        },
+        "price": {
+          "$ref": "#/definitions/price"
         }
       }
     },
@@ -598,6 +713,9 @@
         "isSubcontracted": {
           "type": "boolean",
           "description": "Is there a subcontractor?"
+        },
+        "isConsortium": {
+          "type": "boolean"
         },
         "subcontractedProportion": {
           "type": "integer",
@@ -624,6 +742,18 @@
             "$ref": "#/definitions/unit-price"
           },
           "description": "Array of Unit Price"
+        },
+        "payments": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/payment"
+          }
+        },
+        "subcontractors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/bidder"
+          }
         },
         "subcontractedValue": {
           "$ref": "#/definitions/price",
@@ -656,6 +786,9 @@
           "type": "integer",
           "description": "Lot number"
         },
+        "validBidsCount": {
+          "type": "integer"
+        },
         "awardDecisionDate": {
           "$ref": "#/definitions/date",
           "description": "Date of decision on tender award"
@@ -675,6 +808,9 @@
         "cancellationDate": {
           "$ref": "#/definitions/date",
           "description": "cancellationDate"
+        },
+        "completionDate": {
+          "$ref": "#/definitions/date"
         },
         "selectionMethod": {
           "$ref": "#/definitions/selection-method"
@@ -764,6 +900,9 @@
           },
           "description": "MEAT criteria"
         },
+        "eligibilityCriteria": {
+          "type": "string"
+        },
         "electronicBidsCount": {
           "type": "integer",
           "description": "Number of bids received via electronic means"
@@ -784,9 +923,10 @@
           "type": "string",
           "enum": [
             "ANNOUNCED",
-            "AWARDED"
-          ],
-          "description": ""
+            "AWARDED",
+            "CANCELLED",
+            "PREPARED"
+          ]
         }
       }
     },
@@ -796,36 +936,15 @@
       "title": "Indicator",
       "properties": {
         "value": {
-          "type": "number",
+          "$ref": "#/definitions/indicator-value",
           "description": "Score of indicator"
         },
         "type": {
-          "type": "string",
           "description": "Type of indicator",
-          "enum": [
-            "CORRUPTION_SINGLE_BID",
-            "CORRUPTION_CALL_FOR_TENDER_PUBLICATION",
-            "CORRUPTION_ADVERTISEMENT_PERIOD",
-            "CORRUPTION_PROCEDURE_TYPE",
-            "CORRUPTION_DECISION_PERIOD",
-            "CORRUPTION_TAX_HAVEN",
-            "CORRUPTION_NEW_COMPANY",
-            "ADMINISTRATIVE_CENTRALIZED_PROCUREMENT",
-            "ADMINISTRATIVE_ELECTRONIC_AUCTION",
-            "ADMINISTRATIVE_COVERED_BY_GPA",
-            "ADMINISTRATIVE_FRAMEWORK_AGREEMENT",
-            "ADMINISTRATIVE_ENGLISH_AS_FOREIGN_LANGUAGE",
-            "TRANSPARENCY_NUMBER_OF_KEY_MISSING_FIELDS"
-          ]
+          "$ref": "#/definitions/indicator-type"
         },
         "status": {
-          "type": "string",
-          "enum": [
-            "CALCULATED",
-            "INSUFFICIENT_DATA",
-            "UNDEFINED"
-          ],
-          "description": ""
+          "$ref": "#/definitions/indicator-status-type"
         }
       }
     },
@@ -835,26 +954,13 @@
       "title": "Indicator Scores",
       "properties": {
         "type": {
-          "type": "string",
-          "description": "Type of indicator score",
-          "enum": [
-            "CORRUPTION",
-            "ADMINISTRATIVE",
-            "TRANSPARENCY",
-            "TENDER"
-          ]
+          "$ref": "#/definitions/score-type"
         },
         "status": {
-          "type": "string",
-          "description": "Status of indicator score",
-          "enum": [
-            "CALCULATED",
-            "INSUFFICIENT_DATA",
-            "UNDEFINED"
-          ]
+          "$ref": "#/definitions/indicator-status-type"
         },
         "value": {
-          "type": "number",
+          "$ref": "#/definitions/indicator-value",
           "description": "Calculated indicator score"
         }
       }
@@ -947,6 +1053,9 @@
         "procedureType": {
           "$ref": "#/definitions/procedure-type"
         },
+        "size": {
+          "$ref": "#/definitions/size-type"
+        },
         "supplyType": {
           "$ref": "#/definitions/supply-type"
         },
@@ -1001,6 +1110,9 @@
           "type": "boolean",
           "description": "Are variant offers accepted?"
         },
+        "isDocumentsAccessRestricted": {
+          "type": "boolean"
+        },
         "hasOptions": {
           "type": "boolean",
           "description": "Tender has options?"
@@ -1033,6 +1145,16 @@
           "$ref": "#/definitions/date-time",
           "description": "Date until tender documents or additional information are provided"
         },
+        "awardDecisionDate": {
+          "$ref": "#/definitions/date",
+          "description": "Date of decision on tender award"
+        },
+        "contractSignatureDate": {
+          "$ref": "#/definitions/date"
+        },
+        "completionDate": {
+          "$ref": "#/definitions/date"
+        },
         "estimatedDurationInMonths": {
           "type": "integer",
           "description": "Estimated tender duration in months"
@@ -1056,6 +1178,15 @@
         "maxBidsCount": {
           "type": "integer",
           "description": "Maximum number of bids, typically used in Restricted or Negotiated with publication procedure"
+        },
+        "envisagedMinCandidatesCount": {
+          "type": "integer"
+        },
+        "envisagedMaxCandidatesCount": {
+          "type": "integer"
+        },
+        "envisagedCandidatesCount": {
+          "type": "integer"
         },
         "documentsPrice": {
           "$ref": "#/definitions/price",
@@ -1098,26 +1229,6 @@
             "$ref": "#/definitions/indicator"
           },
           "description": "Array of Indicators"
-        },
-        "_indicators": {
-          "type": "object",
-          "additionalProperties": false,
-          "title": "Indicators as Fields",
-          "properties": {
-            "CORRUPTION_SINGLE_BID": {"type": "number"},
-            "CORRUPTION_CALL_FOR_TENDER_PUBLICATION": {"type": "number"},
-            "CORRUPTION_ADVERTISEMENT_PERIOD": {"type": "number"},
-            "CORRUPTION_PROCEDURE_TYPE": {"type": "number"},
-            "CORRUPTION_DECISION_PERIOD": {"type": "number"},
-            "CORRUPTION_TAX_HAVEN": {"type": "number"},
-            "CORRUPTION_NEW_COMPANY": {"type": "number"},
-            "ADMINISTRATIVE_CENTRALIZED_PROCUREMENT": {"type": "number"},
-            "ADMINISTRATIVE_ELECTRONIC_AUCTION": {"type": "number"},
-            "ADMINISTRATIVE_COVERED_BY_GPA": {"type": "number"},
-            "ADMINISTRATIVE_FRAMEWORK_AGREEMENT": {"type": "number"},
-            "ADMINISTRATIVE_ENGLISH_AS_FOREIGN_LANGUAGE": {"type": "number"},
-            "TRANSPARENCY_NUMBER_OF_KEY_MISSING_FIELDS": {"type": "number"}
-          }
         },
         "onBehalfOf": {
           "type": "array",
@@ -1164,6 +1275,9 @@
           },
           "description": "MEAT criteria"
         },
+        "eligibilityCriteria": {
+          "type": "string"
+        },
         "eligibleBidLanguages": {
           "type": "array",
           "items": {
@@ -1200,6 +1314,30 @@
             "description": "correction"
           },
           "description": "corrections"
+        },
+        "documentsLocation": {
+          "$ref": "#/definitions/address"
+        },
+        "_indicators": {
+          "type": "object",
+          "additionalProperties": false,
+          "title": "Indicators as Fields",
+          "properties": {
+            "INTEGRITY_SINGLE_BID": {"$ref": "#/definitions/indicator-value"},
+            "INTEGRITY_CALL_FOR_TENDER_PUBLICATION": {"$ref": "#/definitions/indicator-value"},
+            "INTEGRITY_ADVERTISEMENT_PERIOD": {"$ref": "#/definitions/indicator-value"},
+            "INTEGRITY_PROCEDURE_TYPE": {"$ref": "#/definitions/indicator-value"},
+            "INTEGRITY_DECISION_PERIOD": {"$ref": "#/definitions/indicator-value"},
+            "INTEGRITY_TAX_HAVEN": {"$ref": "#/definitions/indicator-value"},
+            "INTEGRITY_NEW_COMPANY": {"$ref": "#/definitions/indicator-value"},
+            "ADMINISTRATIVE_CENTRALIZED_PROCUREMENT": {"$ref": "#/definitions/indicator-value"},
+            "ADMINISTRATIVE_ELECTRONIC_AUCTION": {"$ref": "#/definitions/indicator-value"},
+            "ADMINISTRATIVE_COVERED_BY_GPA": {"$ref": "#/definitions/indicator-value"},
+            "ADMINISTRATIVE_FRAMEWORK_AGREEMENT": {"$ref": "#/definitions/indicator-value"},
+            "ADMINISTRATIVE_ENGLISH_AS_FOREIGN_LANGUAGE": {"$ref": "#/definitions/indicator-value"},
+            "TRANSPARENCY_NUMBER_OF_KEY_MISSING_FIELDS": {"$ref": "#/definitions/indicator-value"},
+            "TRANSPARENCY_NOTICE_AND_AWARD_DISCREPANCIES": {"$ref": "#/definitions/indicator-value"}
+          }
         },
         "scores": {
           "type": "array",
