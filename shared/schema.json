@@ -228,6 +228,10 @@
           "description": "ISO 4217 of used currency",
           "distinct": true
         },
+        "publicationDate": {
+          "$ref": "#/definitions/date",
+          "description": ""
+        },
         "currencyNational": {
           "type": "string",
           "description": "ISO 4217 of used currency",
