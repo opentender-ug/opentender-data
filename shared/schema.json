@@ -1339,6 +1339,9 @@
             "TRANSPARENCY_NOTICE_AND_AWARD_DISCREPANCIES": {"$ref": "#/definitions/indicator-value"}
           }
         },
+        "mainCPV": {
+          "type": "string"
+        },
         "scores": {
           "type": "array",
           "items": {
