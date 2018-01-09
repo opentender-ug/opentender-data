@@ -378,10 +378,6 @@
         "postcode": {
           "type": "string"
         },
-        "nutscode": {
-          "type": "string",
-          "description": "Cleaned Nuts code"
-        },
         "country": {
           "type": "string",
           "description": "Country Code: ISO 3166-1 alpha-2 = two letter"
@@ -398,7 +394,18 @@
               "string",
               "null"
             ],
-            "description": "Orginal Nuts code of region"
+            "description": "Original Nuts code of region"
+          }
+        },
+        "ot": {
+          "type": "object",
+          "additionalProperties": false,
+          "title": "Opentender Additional Information",
+          "properties": {
+            "nutscode": {
+              "type": "string",
+              "description": "Cleaned Nuts code"
+            }
           }
         }
       }
@@ -1322,40 +1329,80 @@
         "documentsLocation": {
           "$ref": "#/definitions/address"
         },
-        "_indicators": {
+        "ot": {
           "type": "object",
           "additionalProperties": false,
-          "title": "Indicators as Fields",
+          "title": "Opentender Additional Information",
           "properties": {
-            "INTEGRITY_SINGLE_BID": {"$ref": "#/definitions/indicator-value"},
-            "INTEGRITY_CALL_FOR_TENDER_PUBLICATION": {"$ref": "#/definitions/indicator-value"},
-            "INTEGRITY_ADVERTISEMENT_PERIOD": {"$ref": "#/definitions/indicator-value"},
-            "INTEGRITY_PROCEDURE_TYPE": {"$ref": "#/definitions/indicator-value"},
-            "INTEGRITY_DECISION_PERIOD": {"$ref": "#/definitions/indicator-value"},
-            "INTEGRITY_TAX_HAVEN": {"$ref": "#/definitions/indicator-value"},
-            "INTEGRITY_NEW_COMPANY": {"$ref": "#/definitions/indicator-value"},
-            "ADMINISTRATIVE_CENTRALIZED_PROCUREMENT": {"$ref": "#/definitions/indicator-value"},
-            "ADMINISTRATIVE_ELECTRONIC_AUCTION": {"$ref": "#/definitions/indicator-value"},
-            "ADMINISTRATIVE_COVERED_BY_GPA": {"$ref": "#/definitions/indicator-value"},
-            "ADMINISTRATIVE_FRAMEWORK_AGREEMENT": {"$ref": "#/definitions/indicator-value"},
-            "ADMINISTRATIVE_ENGLISH_AS_FOREIGN_LANGUAGE": {"$ref": "#/definitions/indicator-value"},
-            "TRANSPARENCY_NUMBER_OF_KEY_MISSING_FIELDS": {"$ref": "#/definitions/indicator-value"},
-            "TRANSPARENCY_NOTICE_AND_AWARD_DISCREPANCIES": {"$ref": "#/definitions/indicator-value"}
+            "indicators": {
+              "type": "object",
+              "additionalProperties": false,
+              "title": "Indicators as Fields",
+              "properties": {
+                "INTEGRITY_SINGLE_BID": {
+                  "$ref": "#/definitions/indicator-value"
+                },
+                "INTEGRITY_CALL_FOR_TENDER_PUBLICATION": {
+                  "$ref": "#/definitions/indicator-value"
+                },
+                "INTEGRITY_ADVERTISEMENT_PERIOD": {
+                  "$ref": "#/definitions/indicator-value"
+                },
+                "INTEGRITY_PROCEDURE_TYPE": {
+                  "$ref": "#/definitions/indicator-value"
+                },
+                "INTEGRITY_DECISION_PERIOD": {
+                  "$ref": "#/definitions/indicator-value"
+                },
+                "INTEGRITY_TAX_HAVEN": {
+                  "$ref": "#/definitions/indicator-value"
+                },
+                "INTEGRITY_NEW_COMPANY": {
+                  "$ref": "#/definitions/indicator-value"
+                },
+                "ADMINISTRATIVE_CENTRALIZED_PROCUREMENT": {
+                  "$ref": "#/definitions/indicator-value"
+                },
+                "ADMINISTRATIVE_ELECTRONIC_AUCTION": {
+                  "$ref": "#/definitions/indicator-value"
+                },
+                "ADMINISTRATIVE_COVERED_BY_GPA": {
+                  "$ref": "#/definitions/indicator-value"
+                },
+                "ADMINISTRATIVE_FRAMEWORK_AGREEMENT": {
+                  "$ref": "#/definitions/indicator-value"
+                },
+                "ADMINISTRATIVE_ENGLISH_AS_FOREIGN_LANGUAGE": {
+                  "$ref": "#/definitions/indicator-value"
+                },
+                "TRANSPARENCY_NUMBER_OF_KEY_MISSING_FIELDS": {
+                  "$ref": "#/definitions/indicator-value"
+                },
+                "TRANSPARENCY_NOTICE_AND_AWARD_DISCREPANCIES": {
+                  "$ref": "#/definitions/indicator-value"
+                }
+              }
+            },
+            "cpv": {
+              "type": "string",
+              "title": "Cleaned Main CPV"
+            },
+            "scores": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/score"
+              },
+              "description": "Array of Indicator Scores"
+            },
+            "date": {
+              "$ref": "#/definitions/date",
+              "description": "Unified Tender Date"
+            },
+            "country": {
+              "type": "string",
+              "description": "Country Code: ISO 3166-1 alpha-2 = two letter OR ('EU' == European Institutions)"
+            }
           }
-        },
-        "mainCPV": {
-          "type": "string"
-        },
-        "scores": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/score"
-          },
-          "description": "Array of indicator scores"
-        },
-        "date":  {
-          "$ref": "#/definitions/date",
-          "description": "Unified 'Tender' Date based on tender.awardDeadline && tender.lots.awardDecisionDate for Tender Date filtering"
         }
       },
       "required": [
