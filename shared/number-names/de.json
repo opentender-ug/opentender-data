@@ -1,0 +1,47 @@
+[
+  {},
+  {
+    "one": "tausend",
+    "other": "tausend"
+  },
+  {
+    "one": "Million",
+    "other": "Millionen"
+  },
+  {
+    "one": "Milliarde",
+    "other": "Milliarden"
+  },
+  {
+    "one": "Billion",
+    "other": "Billionen"
+  },
+  {
+    "one": "Billiarde",
+    "other": "Billiaden"
+  },
+  {
+    "one": "Trillion",
+    "other": "Trillionen"
+  },
+  {
+    "one": "Trilliarde",
+    "other": "Trilliarden"
+  },
+  {
+    "one": "Quadrillion",
+    "other": "Quadrillionen"
+  },
+  {
+    "one": "Quadrilliarde",
+    "other": "Quadrilliarden"
+  },
+  {
+    "one": "Quintillion",
+    "other": "Quintillionen"
+  },
+  {
+    "one": "Quintilliarde",
+    "other": "Quintilliarden"
+  }
+]

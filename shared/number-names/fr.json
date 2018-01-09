@@ -1,0 +1,47 @@
+[
+  {},
+  {
+    "one": "mille",
+    "other": "mille"
+  },
+  {
+    "one": "million",
+    "other": "millions"
+  },
+  {
+    "one": "milliard",
+    "other": "milliards"
+  },
+  {
+    "one": "billion",
+    "other": "billions"
+  },
+  {
+    "one": "billiard",
+    "other": "billiards"
+  },
+  {
+    "one": "trillion",
+    "other": "trillions"
+  },
+  {
+    "one": "trilliard",
+    "other": "trilliards"
+  },
+  {
+    "one": "quadrillion",
+    "other": "quadrillions"
+  },
+  {
+    "one": "quadrilliard",
+    "other": "quadrilliards"
+  },
+  {
+    "one": "quintillion",
+    "other": "quintillions"
+  },
+  {
+    "one": "quintilliard",
+    "other": "quintilliards"
+  }
+]
