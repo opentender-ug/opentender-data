@@ -1,0 +1,25 @@
+[
+  {},
+  {"other": "Mille"},
+  {"one": "Milione", "other": "Milioni"},
+  {"one": "Miliardo", "other": "Miliardi"},
+  {"other": "Bilione"},
+  {"other": "Biliardo"},
+  {"other": "Trilione"},
+  {"other": "Triliardo"},
+  {"other": "Quadrilione"},
+  {"other": "Quadriliardo"},
+  {"other": "Quintilione"},
+  {"other": "Quintiliardo"},
+  {"other": "Sestilione"},
+  {"other": "Sestiliardo"},
+  {"other": "Settilione"},
+  {"other": "Settiliardo"},
+  {"other": "Ottilione"},
+  {"other": "Ottiliardo"},
+  {"other": "Nonilione"},
+  {"other": "Noniliardo"},
+  {"other": "Decilione"},
+  {"other": "Deciliardo"}
+]
+

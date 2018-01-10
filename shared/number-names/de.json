@@ -1,47 +1,24 @@
 [
   {},
-  {
-    "one": "tausend",
-    "other": "tausend"
-  },
-  {
-    "one": "Million",
-    "other": "Millionen"
-  },
-  {
-    "one": "Milliarde",
-    "other": "Milliarden"
-  },
-  {
-    "one": "Billion",
-    "other": "Billionen"
-  },
-  {
-    "one": "Billiarde",
-    "other": "Billiaden"
-  },
-  {
-    "one": "Trillion",
-    "other": "Trillionen"
-  },
-  {
-    "one": "Trilliarde",
-    "other": "Trilliarden"
-  },
-  {
-    "one": "Quadrillion",
-    "other": "Quadrillionen"
-  },
-  {
-    "one": "Quadrilliarde",
-    "other": "Quadrilliarden"
-  },
-  {
-    "one": "Quintillion",
-    "other": "Quintillionen"
-  },
-  {
-    "one": "Quintilliarde",
-    "other": "Quintilliarden"
-  }
+  {"one": "Tausend", "other": "Tausend"},
+  {"one": "Million", "other": "Millionen"},
+  {"one": "Milliarde", "other": "Milliarden"},
+  {"one": "Billion", "other": "Billionen"},
+  {"one": "Billiarde", "other": "Billiaden"},
+  {"one": "Trillion", "other": "Trillionen"},
+  {"one": "Trilliarde", "other": "Trilliarden"},
+  {"one": "Quadrillion", "other": "Quadrillionen"},
+  {"one": "Quadrilliarde", "other": "Quadrilliarden"},
+  {"one": "Quintillion", "other": "Quintillionen"},
+  {"one": "Quintilliarde", "other": "Quintilliarden"},
+  {"one": "Sextillion", "other": "Sextillionen"},
+  {"one": "Sextilliarde", "other": "Sextilliarden"},
+  {"one": "Septillion", "other": "Septillionen"},
+  {"one": "Septilliarde", "other": "Septilliarden"},
+  {"one": "Oktillion", "other": "Oktillionen"},
+  {"one": "Oktilliarde", "other": "Oktilliarden"},
+  {"one": "Nonillion", "other": "Nonillionen"},
+  {"one": "Nonilliarde", "other": "Nonilliarden"},
+  {"one": "Dezillion", "other": "Dezillionen"},
+  {"one": "Dezilliarde", "other": "Dezilliarden"}
 ]
