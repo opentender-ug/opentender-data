@@ -34,6 +34,11 @@ used by backend app only
 │   ├── pc2016_be_NUTS-2013_v2.3.json
 │   ├── pc2016_bg_NUTS-2013_v2.3.json
 │   …
+├── cpv // mapping older/other cpv codes, cpv names
+│   ├── README
+│   ├── cpvs_2008.json // names of CPVS
+│   ├── mapppings_cpvs_2003_2007.csv 
+│   …
 └── stopwords.txt // combined stopwords file for elastic search analyzer fields (https://github.com/Alir3z4/stop-words)
 ```
 
