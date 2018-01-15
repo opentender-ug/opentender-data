@@ -1,4 +1,4 @@
-'cpvs.json'
+'cpvs_2008.json'
 http://simap.ted.europa.eu/documents/10184/36234/cpv_2008_xml.zip
 
 'dkpp2cpv.json'
