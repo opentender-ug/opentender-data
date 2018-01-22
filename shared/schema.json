@@ -1334,7 +1334,7 @@
           "additionalProperties": false,
           "title": "Opentender Additional Information",
           "properties": {
-            "indicators": {
+            "indicator": {
               "type": "object",
               "additionalProperties": false,
               "title": "Indicators as Fields",
@@ -1379,6 +1379,25 @@
                   "$ref": "#/definitions/indicator-value"
                 },
                 "TRANSPARENCY_NOTICE_AND_AWARD_DISCREPANCIES": {
+                  "$ref": "#/definitions/indicator-value"
+                }
+              }
+            },
+            "score": {
+              "type": "object",
+              "additionalProperties": false,
+              "title": "Scores as Fields",
+              "properties": {
+                "INTEGRITY": {
+                  "$ref": "#/definitions/indicator-value"
+                },
+                "ADMINISTRATIVE": {
+                  "$ref": "#/definitions/indicator-value"
+                },
+                "TRANSPARENCY": {
+                  "$ref": "#/definitions/indicator-value"
+                },
+                "TENDER": {
                   "$ref": "#/definitions/indicator-value"
                 }
               }
