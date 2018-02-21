@@ -1,5 +1,4 @@
 {
-  "id": "opentender",
   "#schema": "http://json-schema.org/draft-04/schema#",
   "definitions": {
     "date": {
@@ -110,8 +109,8 @@
         "ADMINISTRATIVE_COVERED_BY_GPA",
         "ADMINISTRATIVE_FRAMEWORK_AGREEMENT",
         "ADMINISTRATIVE_ENGLISH_AS_FOREIGN_LANGUAGE",
-        "TRANSPARENCY_NUMBER_OF_KEY_MISSING_FIELDS",
-        "TRANSPARENCY_NOTICE_AND_AWARD_DISCREPANCIES"
+        "ADMINISTRATIVE_NOTICE_AND_AWARD_DISCREPANCIES",
+        "TRANSPARENCY_NUMBER_OF_KEY_MISSING_FIELDS"
       ]
     },
     "score-type": {
@@ -1375,10 +1374,10 @@
                 "ADMINISTRATIVE_ENGLISH_AS_FOREIGN_LANGUAGE": {
                   "$ref": "#/definitions/indicator-value"
                 },
-                "TRANSPARENCY_NUMBER_OF_KEY_MISSING_FIELDS": {
+                "ADMINISTRATIVE_NOTICE_AND_AWARD_DISCREPANCIES": {
                   "$ref": "#/definitions/indicator-value"
                 },
-                "TRANSPARENCY_NOTICE_AND_AWARD_DISCREPANCIES": {
+                "TRANSPARENCY_NUMBER_OF_KEY_MISSING_FIELDS": {
                   "$ref": "#/definitions/indicator-value"
                 }
               }
