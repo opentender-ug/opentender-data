@@ -314,12 +314,12 @@
 		"id": "ro",
 		"name": "Romania",
 		"foi": {
-			"name": "Nu Vă Supărați",
-			"url": "http://nuvasuparati.info",
-			"request": "/new/{body_url_name}?tags=opentender opentenderid:{tenderid}&title={subject}&default_letter={body}",
-			"search": "/search/{subject}/all",
-			"demo_body_url": "academia_romn",
-			"format": "alaveteli"
+			"name": "Românie Curată",
+			"url": "https://www.romaniacurata.ro/ia-statul-la-intrebari/",
+			"request": "",
+			"search": "",
+			"demo_body_url": "",
+			"format": "advertisement page"
 		},
 		"names": {
 			"de": "Rumänien",
