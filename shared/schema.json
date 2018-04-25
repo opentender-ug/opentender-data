@@ -157,6 +157,10 @@
         "isMain": {
           "type": "boolean",
           "description": "Is main cpv code of the subject"
+        },
+        "name": {
+          "type": "string",
+          "description": "Localized name of cpv"
         }
       }
     },
