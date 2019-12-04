@@ -88,7 +88,8 @@
         "PRIOR_INFORMATION_NOTICE",
         "CONTRACT_UPDATE",
         "CONTRACT_AMENDMENT",
-        "OTHER"
+        "OTHER",
+	"COMPILED"
       ],
       "distinct": true,
       "description": "undocumented form-type enumeration"
@@ -147,7 +148,7 @@
     },
     "cpv": {
       "type": "object",
-      "additionalProperties": false,
+      "additionalProperties": true,
       "title": "CPV",
       "properties": {
         "code": {
@@ -166,7 +167,7 @@
     },
     "award-criteria": {
       "type": "object",
-      "additionalProperties": false,
+      "additionalProperties": true,
       "title": "Award Criterion",
       "properties": {
         "name": {
@@ -189,7 +190,7 @@
     },
     "funding": {
       "type": "object",
-      "additionalProperties": false,
+      "additionalProperties": true,
       "title": "Funding",
       "properties": {
         "programme": {
@@ -208,7 +209,7 @@
     },
     "unit-price": {
       "type": "object",
-      "additionalProperties": false,
+      "additionalProperties": true,
       "title": "Unit Price",
       "properties": {
         "unitNumber": {
@@ -223,7 +224,7 @@
     },
     "price": {
       "type": "object",
-      "additionalProperties": false,
+      "additionalProperties": true,
       "title": "Price",
       "properties": {
         "currency": {
@@ -280,7 +281,7 @@
     },
     "correction": {
       "type": "object",
-      "additionalProperties": false,
+      "additionalProperties": true,
       "title": "Correction",
       "properties": {
         "sectionNumber": {
@@ -329,7 +330,7 @@
         },
         "originalValue": {
           "type": "object",
-          "additionalProperties": false,
+          "additionalProperties": true,
           "description": "originalValue",
           "properties": {
             "currency": {
@@ -344,7 +345,7 @@
         },
         "replacementValue": {
           "type": "object",
-          "additionalProperties": false,
+          "additionalProperties": true,
           "description": "replacementValue",
           "properties": {
             "currency": {
@@ -361,7 +362,7 @@
     },
     "address": {
       "type": "object",
-      "additionalProperties": false,
+      "additionalProperties": true,
       "title": "Address",
       "properties": {
         "rawAddress": {
@@ -402,7 +403,7 @@
         },
         "ot": {
           "type": "object",
-          "additionalProperties": false,
+          "additionalProperties": true,
           "title": "Opentender Additional Information",
           "properties": {
             "nutscode": {
@@ -415,7 +416,7 @@
     },
     "publication": {
       "type": "object",
-      "additionalProperties": false,
+      "additionalProperties": true,
       "title": "Publication",
       "properties": {
         "sourceId": {
@@ -484,7 +485,7 @@
     },
     "document": {
       "type": "object",
-      "additionalProperties": false,
+      "additionalProperties": true,
       "title": "TenderDocument",
       "properties": {
         "title": {
@@ -513,7 +514,7 @@
     },
     "body-metadata": {
       "type": "object",
-      "additionalProperties": false,
+      "additionalProperties": true,
       "title": "Meta Data",
       "properties": {
         "foundationDate": {
@@ -524,7 +525,7 @@
     },
     "body": {
       "type": "object",
-      "additionalProperties": false,
+      "additionalProperties": true,
       "title": "Body",
       "properties": {
         "id": {
@@ -565,7 +566,7 @@
     },
     "buyer": {
       "type": "object",
-      "additionalProperties": false,
+      "additionalProperties": true,
       "title": "Buyer",
       "properties": {
         "id": {
@@ -633,7 +634,7 @@
     },
     "bidder": {
       "type": "object",
-      "additionalProperties": false,
+      "additionalProperties": true,
       "title": "Bidder",
       "properties": {
         "id": {
@@ -701,7 +702,7 @@
     },
     "payment": {
       "type": "object",
-      "additionalProperties": false,
+      "additionalProperties": true,
       "title": "Payment",
       "properties": {
         "paymentDate": {
@@ -714,7 +715,7 @@
     },
     "bid": {
       "type": "object",
-      "additionalProperties": false,
+      "additionalProperties": true,
       "title": "Bid",
       "properties": {
         "id": {
@@ -781,7 +782,7 @@
     },
     "lot": {
       "type": "object",
-      "additionalProperties": false,
+      "additionalProperties": true,
       "title": "Lot",
       "properties": {
         "id": {
@@ -946,7 +947,7 @@
     },
     "indicator": {
       "type": "object",
-      "additionalProperties": false,
+      "additionalProperties": true,
       "title": "Indicator",
       "properties": {
         "value": {
@@ -964,7 +965,7 @@
     },
     "score": {
       "type": "object",
-      "additionalProperties": false,
+      "additionalProperties": true,
       "title": "Indicator Scores",
       "properties": {
         "type": {
@@ -981,7 +982,7 @@
     },
     "tender": {
       "type": "object",
-      "additionalProperties": false,
+      "additionalProperties": true,
       "title": "Tender",
       "properties": {
         "id": {
@@ -1334,12 +1335,12 @@
         },
         "ot": {
           "type": "object",
-          "additionalProperties": false,
+          "additionalProperties": true,
           "title": "Opentender Additional Information",
           "properties": {
             "indicator": {
               "type": "object",
-              "additionalProperties": false,
+              "additionalProperties": true,
               "title": "Indicators as Fields",
               "properties": {
                 "INTEGRITY_SINGLE_BID": {
@@ -1388,7 +1389,7 @@
             },
             "score": {
               "type": "object",
-              "additionalProperties": false,
+              "additionalProperties": true,
               "title": "Scores as Fields",
               "properties": {
                 "INTEGRITY": {
