@@ -3,5 +3,5 @@
 .DS_Store
 .idea
 shared/downloads
-tenderapi/*
+tenderapi/import/*.json
 backend/stop-words
