@@ -1,8 +1,0 @@
-http://data.okfn.org/data/core/geo-nuts-administrative-boundaries
-
-https://github.com/datasets/geo-nuts-administrative-boundaries
-
-This Data Package is licensed by its maintainers under the Public Domain Dedication and License (PDDL). http://opendatacommons.org/licenses/pddl/1.0/
-
-Refer to the Copyright notice of the source dataset for any specific restrictions on using these data in a public or commercial product.
-http://ec.europa.eu/eurostat/web/gisco/geodata/reference-data/administrative-units-statistical-units
