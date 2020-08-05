@@ -89,7 +89,7 @@
         "CONTRACT_UPDATE",
         "CONTRACT_AMENDMENT",
         "OTHER",
-	"COMPILED"
+        "COMPILED"
       ],
       "distinct": true,
       "description": "undocumented form-type enumeration"
@@ -111,7 +111,22 @@
         "ADMINISTRATIVE_FRAMEWORK_AGREEMENT",
         "ADMINISTRATIVE_ENGLISH_AS_FOREIGN_LANGUAGE",
         "ADMINISTRATIVE_NOTICE_AND_AWARD_DISCREPANCIES",
-        "TRANSPARENCY_NUMBER_OF_KEY_MISSING_FIELDS"
+        "TRANSPARENCY_NUMBER_OF_KEY_MISSING_FIELDS",
+        "INTEGRITY_WINNER_CA_SHARE",
+        "INTEGRITY_NR_OF_REQUESTED_BIDS",
+        "TRANSPARENCY_BUYER_NAME_MISSING",
+        "TRANSPARENCY_TITLE_MISSING",
+        "TRANSPARENCY_BIDDER_NAME_MISSING",
+        "TRANSPARENCY_BIDDER_ID_MISSING",
+        "TRANSPARENCY_CA_TYPE_MISSING",
+        "TRANSPARENCY_VALUE_MISSING",
+        "TRANSPARENCY_IMP_LOC_MISSING",
+        "TRANSPARENCY_PROC_METHOD_MISSING",
+        "TRANSPARENCY_BID_NR_MISSING",
+        "TRANSPARENCY_AWARD_DATE_MISSING",
+        "TRANSPARENCY_HEADOFENTITY_DATE_MISSING",
+        "TRANSPARENCY_COMMITTEE_DATE_MISSING",
+        "TRANSPARENCY_YEAR_MISSING"
       ]
     },
     "score-type": {
@@ -137,6 +152,7 @@
       "enum": [
         "CALCULATED",
         "INSUFFICIENT_DATA",
+        "INSUFFICIENT",
         "UNDEFINED"
       ]
     },
@@ -1383,6 +1399,54 @@
                   "$ref": "#/definitions/indicator-value"
                 },
                 "TRANSPARENCY_NUMBER_OF_KEY_MISSING_FIELDS": {
+                  "$ref": "#/definitions/indicator-value"
+                },
+                "ADMINISTRATIVE_NOTICE_AND_AWARD_DISCREPANCIES": {
+                  "$ref": "#/definitions/indicator-value"
+                },
+                "INTEGRITY_WINNER_CA_SHARE": {
+                  "$ref": "#/definitions/indicator-value"
+                },
+                "INTEGRITY_NR_OF_REQUESTED_BIDS": {
+                  "$ref": "#/definitions/indicator-value"
+                },
+                "TRANSPARENCY_BUYER_NAME_MISSING": {
+                  "$ref": "#/definitions/indicator-value"
+                },
+                "TRANSPARENCY_TITLE_MISSING": {
+                  "$ref": "#/definitions/indicator-value"
+                },
+                "TRANSPARENCY_BIDDER_NAME_MISSING": {
+                  "$ref": "#/definitions/indicator-value"
+                },
+                "TRANSPARENCY_BIDDER_ID_MISSING": {
+                  "$ref": "#/definitions/indicator-value"
+                },
+                "TRANSPARENCY_CA_TYPE_MISSING": {
+                  "$ref": "#/definitions/indicator-value"
+                },
+                "TRANSPARENCY_VALUE_MISSING": {
+                  "$ref": "#/definitions/indicator-value"
+                },
+                "TRANSPARENCY_IMP_LOC_MISSING": {
+                  "$ref": "#/definitions/indicator-value"
+                },
+                "TRANSPARENCY_PROC_METHOD_MISSING": {
+                  "$ref": "#/definitions/indicator-value"
+                },
+                "TRANSPARENCY_BID_NR_MISSING": {
+                  "$ref": "#/definitions/indicator-value"
+                },
+                "TRANSPARENCY_AWARD_DATE_MISSING": {
+                  "$ref": "#/definitions/indicator-value"
+                },
+                "TRANSPARENCY_HEADOFENTITY_DATE_MISSING": {
+                  "$ref": "#/definitions/indicator-value"
+                },
+                "TRANSPARENCY_COMMITTEE_DATE_MISSING": {
+                  "$ref": "#/definitions/indicator-value"
+                },
+                "TRANSPARENCY_YEAR_MISSING": {
                   "$ref": "#/definitions/indicator-value"
                 }
               }
