@@ -126,7 +126,9 @@
         "TRANSPARENCY_AWARD_DATE_MISSING",
         "TRANSPARENCY_HEADOFENTITY_DATE_MISSING",
         "TRANSPARENCY_COMMITTEE_DATE_MISSING",
-        "TRANSPARENCY_YEAR_MISSING"
+        "TRANSPARENCY_YEAR_MISSING",
+        "TRANSPARENCY_MARKET_MISSING",
+        "TRANSPARENCY_BUYER_LOC_MISSING"
       ]
     },
     "score-type": {
@@ -1444,6 +1446,12 @@
                   "$ref": "#/definitions/indicator-value"
                 },
                 "TRANSPARENCY_COMMITTEE_DATE_MISSING": {
+                  "$ref": "#/definitions/indicator-value"
+                },
+                "TRANSPARENCY_MARKET_MISSING": {
+                  "$ref": "#/definitions/indicator-value"
+                },
+                "TRANSPARENCY_BUYER_LOC_MISSING": {
                   "$ref": "#/definitions/indicator-value"
                 },
                 "TRANSPARENCY_YEAR_MISSING": {
